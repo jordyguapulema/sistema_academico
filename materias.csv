@@ -1,2 +1,11 @@
-ID, Nombre, Cr�ditos, Departamento, Semestre, Tipo, Horario, Aula
-345,as,1,as,2,as,as,as
+﻿id,nombre,creditos,departamento,semestre,tipo,horario,aula
+1,Programación,4,Ingeniería de Sistemas,1,Obligatoria,Lunes 10h-13h,101
+2,Cálculo,5,Ingeniería de Sistemas,1,Obligatoria,Martes 8h-11h,102
+3,Física,4,Ingeniería Eléctrica,1,Obligatoria,Miércoles 9h-12h,103
+4,Química,3,Ingeniería Química,2,Obligatoria,Jueves 11h-13h,104
+5,Algebra,4,Ingeniería Civil,1,Obligatoria,Viernes 10h-13h,105
+6,Estadística,4,Ingeniería Ambiental,2,Obligatoria,Lunes 14h-17h,106
+7,Termodinámica,4,Ingeniería Mecánica,3,Obligatoria,Martes 10h-13h,107
+8,Resistencia de Materiales,5,Ingeniería Civil,4,Obligatoria,Miércoles 8h-11h,108
+9,Electrónica Digital,4,Ingeniería Electrónica,3,Obligatoria,Jueves 9h-12h,109
+10,Redes de Computadoras,4,Ingeniería de Telecomunicaciones,5,Obligatoria,Viernes 14h-17h,110
