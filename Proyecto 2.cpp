@@ -4,6 +4,7 @@
 #include <vector>
 #include <sstream>
 #include <cstring>
+#include <limits>
 
 using namespace std;
 
@@ -71,6 +72,7 @@ void crearArchivoCSVConEncabezado(const string& nombreArchivo, const string& enc
         archivo.close();
         cout << "Archivo creado o verificado: " << nombreArchivo << endl;
     }
+    system("cls"); 
 }
 
 void menuPrincipal();
@@ -146,35 +148,56 @@ void guardarInvestigacionCSV(const Investigacion& investigacion) {
 void mostrarEl(const string& tipo) {
     ifstream archivo;
     string linea;
+    system("cls");
 
     if (tipo == "Estudiante") {
         archivo.open("estudiantes.csv");
-        cout << "\n--- Lista de Estudiantes ---" << endl;
-        while (getline(archivo, linea)) {
-            cout << linea << endl;
+        if (!archivo.is_open()) {
+            cerr << "Error al abrir el archivo de estudiantes." << endl;
+            return;
         }
+        cout << "\n--- Lista de Estudiantes ---" << endl;
     } else if (tipo == "Docente") {
         archivo.open("docentes.csv");
-        cout << "\n--- Lista de Docentes ---" << endl;
-        while (getline(archivo, linea)) {
-            cout << linea << endl;
+        if (!archivo.is_open()) {
+            cerr << "Error al abrir el archivo de docentes." << endl;
+            return;
         }
+        cout << "\n--- Lista de Docentes ---" << endl;
     } else if (tipo == "Materia") {
         archivo.open("materias.csv");
-        cout << "\n--- Lista de Materias ---" << endl;
-        while (getline(archivo, linea)) {
-            cout << linea << endl;
+        if (!archivo.is_open()) {
+            cerr << "Error al abrir el archivo de materias." << endl;
+            return;
         }
+        cout << "\n--- Lista de Materias ---" << endl;
     } else if (tipo == "Investigación") {
         archivo.open("investigaciones.csv");
-        cout << "\n--- Lista de Investigaciones ---" << endl;
-        while (getline(archivo, linea)) {
-            cout << linea << endl;
+        if (!archivo.is_open()) {
+            cerr << "Error al abrir el archivo de investigaciones." << endl;
+            return;
         }
+        cout << "\n--- Lista de Investigaciones ---" << endl;
+    } else {
+        cerr << "Tipo no reconocido." << endl;
+        return;
+    }
+
+    bool hayRegistros = false;
+    while (getline(archivo, linea)) {
+        cout << linea << endl;
+        hayRegistros = true;
+    }
+
+    if (!hayRegistros) {
+        cout << "No hay registros para mostrar." << endl;
     }
 
     archivo.close();
+    cout << "Archivo cerrado correctamente." << endl;
 }
+
+
 
 // Funciones para editar y eliminar registros en archivos .csv
 void editarEstudianteCSV(int id);
@@ -201,7 +224,10 @@ int main() {
 void menuPrincipal() {
     int opcion;
     do {
+    	system("cls");
+		cout << "-----------------------";
         cout << "\n--- Menú Principal ---" << endl;
+        cout << "-----------------------" << endl;
         cout << "1. Estudiante" << endl;
         cout << "2. Docente" << endl;
         cout << "3. Materia" << endl;
@@ -224,7 +250,9 @@ void menuPrincipal() {
 void submenu(const string& tipo) {
     int opcion;
     do {
+    	cout << "-----------------------------";
         cout << "\n--- Submenú " << tipo << " ---" << endl;
+        cout << "-----------------------------" << endl;
         cout << "1. Ingreso" << endl;
         cout << "2. Editar" << endl;
         cout << "3. Eliminar" << endl;
@@ -273,8 +301,19 @@ void submenu(const string& tipo) {
     } while(opcion != 5);
 }
 
+string obtenerCalificacion(double promedio) {
+    if (promedio >= 28) return "Aprobado";
+    else if (promedio >= 18) return "Supletorio";
+    else return "Suspenso";
+}
+
+double calcularPromedio(double nota1, double nota2) {
+    return (nota1 + nota2);
+}
+
 void ingresoDeEstudiante() {
     Estudiante estudiante;
+    system("cls"); 
     cout << "Ingresando nuevo estudiante..." << endl;
     cout << "ID Estudiante: "; cin >> estudiante.id_estudiante;
     cout << "Nombres: "; cin.ignore(); getline(cin, estudiante.nombres);
@@ -286,6 +325,14 @@ void ingresoDeEstudiante() {
     cout << "Teléfono: "; getline(cin, estudiante.telefono);
     cout << "Nota Primer Bimestre: "; cin >> estudiante.nota_primer_bimestre;
     cout << "Nota Segundo Semestre: "; cin >> estudiante.nota_segundo_semestre;
+
+    // Calcular promedio y calificación
+    double promedio = calcularPromedio(estudiante.nota_primer_bimestre, estudiante.nota_segundo_semestre);
+    string calificacion = obtenerCalificacion(promedio);
+
+    cout << "Promedio: " << promedio << endl;
+    cout << "Calificación: " << calificacion << endl;
+
     guardarEstudianteCSV(estudiante); // Guardar en archivo .csv
 }
 
@@ -306,7 +353,7 @@ void editarEstudianteCSV(int id) {
         }
 
         if (datos[0] == to_string(id)) {
-                        encontrado = true;
+            encontrado = true;
             Estudiante estudiante;
             estudiante.id_estudiante = id;
             estudiante.nombres = datos[1];
@@ -320,6 +367,7 @@ void editarEstudianteCSV(int id) {
             estudiante.nota_segundo_semestre = stoi(datos[9]);
 
             int opcion;
+            system("cls");
             cout << "Seleccione el campo que desea editar:" << endl;
             cout << "1. Nombres" << endl;
             cout << "2. Apellidos" << endl;
@@ -399,6 +447,7 @@ void eliminarEstudianteCSV(int id) {
 
 void ingresoDeDocente() {
     Docente docente;
+    system("cls");
     cout << "Ingresando nuevo docente..." << endl;
     cout << "ID Docente: "; cin >> docente.id_docente;
     cout << "Nombre: "; cin.ignore(); getline(cin, docente.nombre);
@@ -440,6 +489,7 @@ void editarDocenteCSV(int id) {
             docente.departamento = datos[7];
 
             int opcion;
+            system("cls");
             cout << "Seleccione el campo que desea editar:" << endl;
             cout << "1. Nombre" << endl;
             cout << "2. Apellido" << endl;
@@ -450,6 +500,7 @@ void editarDocenteCSV(int id) {
             cout << "7. Departamento" << endl;
             cout << "Ingrese su opción: ";
             cin >> opcion;
+            cin.ignore();
 
             switch(opcion) {
                 case 1: cout << "Nuevo Nombre: "; cin.ignore(); getline(cin, docente.nombre); break;
@@ -516,6 +567,7 @@ void eliminarDocenteCSV(int id) {
 
 void ingresoDeMateria() {
     Materia materia;
+    system("cls");
     cout << "Ingresando nueva materia..." << endl;
     cout << "ID Materia: "; cin >> materia.id_materia;
     cout << "Nombre: "; cin.ignore(); getline(cin, materia.nombre);
@@ -557,6 +609,7 @@ void editarMateriaCSV(int id) {
             materia.aula = datos[7];
 
             int opcion;
+            system("cls");
             cout << "Seleccione el campo que desea editar:" << endl;
             cout << "1. Nombre" << endl;
             cout << "2. Créditos" << endl;
@@ -634,6 +687,7 @@ void eliminarMateriaCSV(int id) {
 
 void ingresoDeInvestigacion() {
     Investigacion investigacion;
+    system("cls");
     cout << "Ingresando nueva investigación..." << endl;
     cout << "ID Investigación: "; cin >> investigacion.id_investigacion;
     cout << "Título: "; cin.ignore(); getline(cin, investigacion.titulo);
@@ -666,13 +720,39 @@ void editarInvestigacionCSV(int id) {
             encontrado = true;
             Investigacion investigacion;
             investigacion.id_investigacion = id;
-            cout << "Título: "; cin.ignore(); getline(cin, investigacion.titulo);
-            cout << "Área de Estudio: "; getline(cin, investigacion.area_estudio);
-            cout << "Apellidos Estudiante Autor (Escribir 'Ninguno' si no aplica): "; getline(cin, investigacion.apellidos_estudiante_autor);
-            cout << "Apellidos Docente Autor (Escribir 'Ninguno' si no aplica): "; getline(cin, investigacion.apellidos_docente_autor);
-            cout << "Presupuesto: "; cin >> investigacion.presupuesto;
-            cout << "Resultados: "; cin.ignore(); getline(cin, investigacion.resultados);
-            cout << "Estado (En Proceso, Finalizado): "; getline(cin, investigacion.estado);
+            investigacion.titulo = datos[1];
+            investigacion.area_estudio = datos[2];
+            investigacion.apellidos_estudiante_autor = datos[3];
+            investigacion.apellidos_docente_autor = datos[4];
+            investigacion.presupuesto = stof(datos[5]);
+            investigacion.resultados = datos[6];
+            investigacion.estado = datos[7];
+
+            int opcion;
+            system("cls");
+            cout << "Seleccione el campo que desea editar:" << endl;
+            cout << "1. Título" << endl;
+            cout << "2. Área de Estudio" << endl;
+            cout << "3. Apellidos Estudiante Autor" << endl;
+            cout << "4. Apellidos Docente Autor" << endl;
+            cout << "5. Presupuesto" << endl;
+            cout << "6. Resultados" << endl;
+            cout << "7. Estado" << endl;
+            cout << "Ingrese su opción: ";
+            cin >> opcion;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignorar el carácter de nueva línea residual
+
+            switch(opcion) {
+                case 1: cout << "Nuevo Título: "; getline(cin, investigacion.titulo); break;
+                case 2: cout << "Nueva Área de Estudio: "; getline(cin, investigacion.area_estudio); break;
+                case 3: cout << "Nuevos Apellidos Estudiante Autor: "; getline(cin, investigacion.apellidos_estudiante_autor); break;
+                case 4: cout << "Nuevos Apellidos Docente Autor: "; getline(cin, investigacion.apellidos_docente_autor); break;
+                case 5: cout << "Nuevo Presupuesto: "; cin >> investigacion.presupuesto; cin.ignore(numeric_limits<streamsize>::max(), '\n'); break;
+                case 6: cout << "Nuevos Resultados: "; getline(cin, investigacion.resultados); break;
+                case 7: cout << "Nuevo Estado: "; getline(cin, investigacion.estado); break;
+                default: cout << "Opción no válida." << endl; return;
+            }
+
             archivoTemp << investigacion.id_investigacion << "," << investigacion.titulo << "," << investigacion.area_estudio << "," << investigacion.apellidos_estudiante_autor << "," << investigacion.apellidos_docente_autor << "," << investigacion.presupuesto << "," << investigacion.resultados << "," << investigacion.estado << endl;
         } else {
             archivoTemp << linea << endl;
@@ -688,6 +768,7 @@ void editarInvestigacionCSV(int id) {
         cout << "Investigación no encontrada." << endl;
     }
 }
+
 
 // Función para eliminar una investigación en el archivo .csv
 void eliminarInvestigacionCSV(int id) {
