@@ -1,2 +1,4 @@
 ID, Nombres, Apellidos, Edad, Carrera, Direccion, Email, Telefono, Nota Primer Bimestre, Nota Segundo Semestre, Aprueba
-5,Jordy,Guapulema,19,Computacion,Caupicho,jordy.guapulema@example.com,0993501250,14,15,Aprueba
+5,Jordy,Guapulema,18,Computacion,Caupicho,jordy.guapulema@example.com,0993501250,14,15,
+1,Pedro Alejandro,Salazar Rojas,20,Ingenieria de Sistemas,Pomasqui,pedro.salazar@example.com,0987654321,13,13,Supletorio
+2,Daniela Fernanda,Perez Santos,24,Ingenieria Mecancica,Cotocollao,daniela.perez@exapmle.com,0987654323,8,9,Suspenso

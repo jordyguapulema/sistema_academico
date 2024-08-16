@@ -367,6 +367,7 @@ void editarEstudianteCSV(int id) {
             estudiante.telefono = datos[7];
             estudiante.nota_primer_bimestre = stoi(datos[8]);
             estudiante.nota_segundo_semestre = stoi(datos[9]);
+            estudiante.calificacion = stoi(datos[9]);
 
             int opcion;
             system("cls");
@@ -380,6 +381,7 @@ void editarEstudianteCSV(int id) {
             cout << "7. Telefono" << endl;
             cout << "8. Nota Primer Bimestre" << endl;
             cout << "9. Nota Segundo Semestre" << endl;
+            cout << "10. Calificación" << endl;
             cout << "Ingrese su opción: ";
             cin >> opcion;
 
@@ -393,10 +395,11 @@ void editarEstudianteCSV(int id) {
                 case 7: cout << "Nuevo Teléfono: "; getline(cin, estudiante.telefono); break;
                 case 8: cout << "Nueva Nota Primer Bimestre: "; cin >> estudiante.nota_primer_bimestre; break;
                 case 9: cout << "Nueva Nota Segundo Semestre: "; cin >> estudiante.nota_segundo_semestre; break;
+                case 10: cout << "Nueva Calificación: "; cin >> estudiante.calificacion; break;
                 default: cout << "Opción no válida." << endl; return;
             }
 
-            archivoTemp << estudiante.id_estudiante << "," << estudiante.nombres << "," << estudiante.apellidos << "," << estudiante.edad << "," << estudiante.carrera << "," << estudiante.direccion << "," << estudiante.email << "," << estudiante.telefono << "," << estudiante.nota_primer_bimestre << "," << estudiante.nota_segundo_semestre << endl;
+            archivoTemp << estudiante.id_estudiante << "," << estudiante.nombres << "," << estudiante.apellidos << "," << estudiante.edad << "," << estudiante.carrera << "," << estudiante.direccion << "," << estudiante.email << "," << estudiante.telefono << "," << estudiante.nota_primer_bimestre << "," << estudiante.nota_segundo_semestre << "," << estudiante.calificacion << endl;
         } else {
             archivoTemp << linea << endl;
         }
