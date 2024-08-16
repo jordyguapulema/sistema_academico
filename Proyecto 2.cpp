@@ -19,6 +19,7 @@ struct Estudiante {
     string telefono;
     int nota_primer_bimestre;
     int nota_segundo_semestre;
+    string calificacion;
 };
 
 struct Docente {
@@ -102,7 +103,8 @@ void guardarEstudianteCSV(const Estudiante& estudiante) {
             << estudiante.email << ","
             << estudiante.telefono << ","
             << estudiante.nota_primer_bimestre << ","
-            << estudiante.nota_segundo_semestre << endl;
+            << estudiante.nota_segundo_semestre << ","
+			<< estudiante.calificacion << endl;
     archivo.close();
 }
 
@@ -213,7 +215,7 @@ void eliminarInvestigacionCSV(int id);
 
 int main() {
 	setlocale(LC_ALL,"spanish");
-	crearArchivoCSVConEncabezado("estudiantes.csv", "ID, Nombres, Apellidos, Edad, Carrera, Direccion, Email, Telefono, Nota Primer Bimestre, Nota Segundo Semestre");
+	crearArchivoCSVConEncabezado("estudiantes.csv", "ID, Nombres, Apellidos, Edad, Carrera, Direccion, Email, Telefono, Nota Primer Bimestre, Nota Segundo Semestre, Aprueba");
     crearArchivoCSVConEncabezado("docentes.csv", "ID, Nombre, Apellido, Edad, Tipo de Contrato, Email, Telefono, Departamento");
     crearArchivoCSVConEncabezado("materias.csv", "ID, Nombre, Creditos, Departamento, Semestre, Tipo, Horario, Aula");
     crearArchivoCSVConEncabezado("investigaciones.csv", "ID, Titulo, Area de Estudio, Apellidos Estudiante Autor, Apellidos Docente Autor, Presupuesto, Resultados, Estado");
@@ -331,7 +333,7 @@ void ingresoDeEstudiante() {
     string calificacion = obtenerCalificacion(promedio);
 
     cout << "Promedio: " << promedio << endl;
-    cout << "Calificación: " << calificacion << endl;
+    cout << "Calificación: "; cin >> estudiante.calificacion;
 
     guardarEstudianteCSV(estudiante); // Guardar en archivo .csv
 }
