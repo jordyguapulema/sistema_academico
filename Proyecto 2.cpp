@@ -213,10 +213,10 @@ void eliminarInvestigacionCSV(int id);
 
 int main() {
 	setlocale(LC_ALL,"spanish");
-	crearArchivoCSVConEncabezado("estudiantes.csv", "ID, Nombres, Apellidos, Edad, Carrera, Dirección, Email, Teléfono, Nota Primer Bimestre, Nota Segundo Semestre");
-    crearArchivoCSVConEncabezado("docentes.csv", "ID, Nombre, Apellido, Edad, Tipo de Contrato, Email, Teléfono, Departamento");
-    crearArchivoCSVConEncabezado("materias.csv", "ID, Nombre, Créditos, Departamento, Semestre, Tipo, Horario, Aula");
-    crearArchivoCSVConEncabezado("investigaciones.csv", "ID, Título, Área de Estudio, Apellidos Estudiante Autor, Apellidos Docente Autor, Presupuesto, Resultados, Estado");
+	crearArchivoCSVConEncabezado("estudiantes.csv", "ID, Nombres, Apellidos, Edad, Carrera, Direccion, Email, Telefono, Nota Primer Bimestre, Nota Segundo Semestre");
+    crearArchivoCSVConEncabezado("docentes.csv", "ID, Nombre, Apellido, Edad, Tipo de Contrato, Email, Telefono, Departamento");
+    crearArchivoCSVConEncabezado("materias.csv", "ID, Nombre, Creditos, Departamento, Semestre, Tipo, Horario, Aula");
+    crearArchivoCSVConEncabezado("investigaciones.csv", "ID, Titulo, Area de Estudio, Apellidos Estudiante Autor, Apellidos Docente Autor, Presupuesto, Resultados, Estado");
     menuPrincipal();
     return 0;
 }
@@ -373,9 +373,9 @@ void editarEstudianteCSV(int id) {
             cout << "2. Apellidos" << endl;
             cout << "3. Edad" << endl;
             cout << "4. Carrera" << endl;
-            cout << "5. Dirección" << endl;
+            cout << "5. Direccion" << endl;
             cout << "6. Email" << endl;
-            cout << "7. Teléfono" << endl;
+            cout << "7. Telefono" << endl;
             cout << "8. Nota Primer Bimestre" << endl;
             cout << "9. Nota Segundo Semestre" << endl;
             cout << "Ingrese su opción: ";
