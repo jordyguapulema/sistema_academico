@@ -1,11 +1,2 @@
-﻿id,titulo,areaEstudio,apellidosEstudianteAutor,apellidosDocenteAutor,presupuesto,resultados,estado
-1,Desarrollo de un Algoritmo de IA,Ciencias de la Computación,Guamán Sarsoza,Sánchez Revelo,50000,Algoritmo funcional,Finalizado
-2,Optimización de Procesos Químicos,Ingeniería Química,Vera Jaramillo,Rodríguez Moreno,60000,Nuevos métodos de optimización,En progreso
-3,Eficiencia Energética en Edificios,Ingeniería Civil,Ortega Herrera,Gómez López,55000,Implementación en edificios,Finalizado
-4,Control Automático de Procesos,Ingeniería Electrónica,Romero Cordero,Murillo Pérez,45000,Sistema de control desarrollado,Finalizado
-5,Desarrollo de Materiales Nanoestructurados,Ingeniería de Materiales,López Aguilar,Gómez Díaz,70000,Nanotecnología aplicada,En progreso
-6,Estudio de la Contaminación en Ríos,Ingeniería Ambiental,Mora Villalba,Ramírez Vega,50000,Modelos de predicción,Finalizado
-7,Análisis de Datos Masivos,Ingeniería de Software,Castro Zúñiga,Pérez González,65000,Sistema de análisis en desarrollo,En progreso
-8,Seguridad en Redes de Comunicación,Ingeniería de Telecomunicaciones,García Ruiz,Cordero Espinoza,60000,Métodos de seguridad mejorados,Finalizado
-9,Desarrollo de Biosensores,Ingeniería Biomédica,Caicedo Benítez,Ruiz Montero,70000,Biosensores funcionales,En progreso
-10,Optimización de Algoritmos de Búsqueda,Ingeniería de Sistemas,Flores Ríos,Sánchez Castillo,65000,Nuevas técnicas de búsqueda,En progreso
+ID, T�tulo, �rea de Estudio, Apellidos Estudiante Autor, Apellidos Docente Autor, Presupuesto, Resultados, Estado
+4,as,as,as,as,3,as,as

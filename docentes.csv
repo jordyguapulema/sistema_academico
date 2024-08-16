@@ -1,11 +1,2 @@
-﻿id,nombres,apellidos,edad,tipoContrato,email,telefono,departamento
-1,Luis Joel,Guingla Verdezoto,22,Completo,luis.guingla@epn.edu.ec,1234567890,Ingeniería de Sistemas
-2,Erick Vinicio,Guacho Verdezoto,23,Parcial,erick.guacho@epn.edu.ec,0987654321,Ingeniería de Software
-3,Juan Carlos,Perez González,30,Completo,juan.perez@example.com,9876543210,Ingeniería Electrónica
-4,Ana María,Gómez López,29,Parcial,ana.gomez@example.com,1234509876,Ingeniería de Telecomunicaciones
-5,María Fernanda,Santos Ruiz,35,Completo,maria.santos@example.com,1234560987,Ingeniería Eléctrica
-6,Carlos Alberto,Martínez Jiménez,40,Parcial,carlos.martinez@example.com,1230984567,Ingeniería Mecánica
-7,Patricia Elena,García Díaz,28,Completo,patricia.garcia@example.com,3216549870,Ingeniería Civil
-8,José Luis,Ortiz Márquez,38,Parcial,jose.ortiz@example.com,4567891230,Ingeniería Ambiental
-9,Verónica Sofía,Ramírez Vega,32,Completo,veronica.ramirez@example.com,6549873210,Ingeniería Química
-10,Andrés Felipe,Hernández Castro,45,Parcial,andres.hernandez@example.com,7891234560,Ingeniería de Materiales
+ID, Nombre, Apellido, Edad, Tipo de Contrato, Email, Tel�fono, Departamento
+2,as,as,1,as,as,1,as

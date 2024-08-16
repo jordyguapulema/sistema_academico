@@ -1,11 +1,2 @@
-﻿id,nombres,apellidos,edad,carrera,direccion,email,telefono,notaPrimerBimestre,notaSegundoBimestre
-1,Pedro Alejandro,Salazar Rojas,20,Ingeniería de Sistemas,Pomasqui,pedro.salazar@example.com,0987654321,19.5,20
-2,María José,Acosta Méndez,21,Ingeniería Civil,Carcelén,maria.acosta@example.com,1234567890,18.0,19
-3,Carlos Andrés,Lara Guerrero,22,Ingeniería Electrónica,El Condado,carlos.lara@example.com,0987654322,17.5,18
-4,Ana Sofía,Navarro Paredes,23,Ingeniería Química,La Rumiñahui,ana.navarro@example.com,1234567891,20,20
-5,Daniela Fernanda,Pérez Santos,24,Ingeniería Mecánica,Cotocollao,daniela.perez@example.com,0987654323,16.0,17
-6,Juan Esteban,Gómez Ruiz,25,Ingeniería Eléctrica,El Bosque,juan.gomez@example.com,1234567892,19.5,20
-7,Santiago Javier,Ramírez Vega,26,Ingeniería de Software,Quito Tenis,santiago.ramirez@example.com,0987654324,18.5,19
-8,Luis Fernando,González Andrade,27,Ingeniería Ambiental,Centro,luis.gonzalez@example.com,1234567893,17.0,18
-9,María Elena,Ortiz Márquez,28,Ingeniería de Materiales,San Juan,maria.ortiz@example.com,0987654325,19.0,20
-10,José Alberto,Rosales Díaz,29,Ingeniería de Telecomunicaciones,La Mariscal,jose.rosales@example.com,1234567894,20,20
+ID, Nombres, Apellidos, Edad, Carrera, Direcci�n, Email, Tel�fono, Nota Primer Bimestre, Nota Segundo Semestre
+1,as,as,1,as,as,as,1,1,1
